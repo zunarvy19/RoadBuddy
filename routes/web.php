@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CalculateController;
 use App\Http\Controllers\JenisBBMController;
 use App\Http\Controllers\ProfileController;
@@ -35,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/user/calculate', [CalculateController::class, 'index'])->name('user.calculate.index');
 
-
+Route::get('admin/dashboard', [AdminController::class, 'index'])->name('user.admin.index');
 
 
 
