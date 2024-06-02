@@ -23,6 +23,7 @@ export default {
             },
             colors: {
                 primary: "#1F2937",
+                secondary: "#F9A825",
             },
         },
     },

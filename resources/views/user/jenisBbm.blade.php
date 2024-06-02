@@ -56,16 +56,54 @@
             </tbody>
         </table>
       </div>
+
+        {{-- VIVO SECTION --}}
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-5">
+            <table class="sm:w-full text-sm text-left text-gray-500 dark:text-gray-400">
+              <div class="border-b-4 py-5">
+              <img src="/img/vivoLogo.png" alt="" class="w-36 sm:w-[120px]  h-auto mx-auto flex items-center justify-items-center px-5">
+              </div>
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <tr class="border-t-4 border-[#083F6B] py-8">
+                            <th scope="col" class="px-6 py-3">
+                                Vendor
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Jenis BBM
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Harga BBM
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($vivo as $item)
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $item->vendor ? $item->vendor->namaVendor : 'N/A' }}
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $item->jenis_bbm }}
+                            </td>
+                            <td class="px-6 py-4">
+                                Rp.{{ number_format($item->harga_bbm, 0) }}
+                            </td>
+                        </tr>
+                        @endforeach
+                </tbody>
+            </table>
+          </div>
       
       {{-- SHELL SECTION --}}
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-5">
         <table class="sm:w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <div class="border-b-4 border-[#FFD500] py-5">
-          <img src="/img/ShellLogo.png" alt="" class="w-36 sm:w-[120px]  h-auto mx-auto flex items-center justify-items-center px-5">
+          <div class="border-b-4 py-5">
+          <img src="/img/ShellLogo.png" alt="" class="w-36 sm:w-[130px]  h-auto mx-auto flex items-center justify-items-center px-5">
           </div>
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                    <tr class="border-t-4 border-[#ED1B2F] py-8">
+                    <tr class="border-t-4 border-[#FFD500] py-8">
                         <th scope="col" class="px-6 py-3">
                             Vendor
                         </th>
@@ -95,48 +133,12 @@
         </table>
       </div>
       
-      {{-- VIVO SECTION --}}
-      <div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-5">
-        <table class="sm:w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <div class="border-b-4 py-5">
-          <img src="/img/vivoLogo.png" alt="" class="w-36 sm:w-[120px]  h-auto mx-auto flex items-center justify-items-center px-5">
-          </div>
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                    <tr class="border-t-4 border-[#083F6B] py-8">
-                        <th scope="col" class="px-6 py-3">
-                            Vendor
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Jenis BBM
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Harga BBM
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($vivo as $item)
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $item->vendor ? $item->vendor->namaVendor : 'N/A' }}
-                        </th>
-                        <td class="px-6 py-4">
-                            {{ $item->jenis_bbm }}
-                        </td>
-                        <td class="px-6 py-4">
-                            Rp.{{ number_format($item->harga_bbm, 0) }}
-                        </td>
-                    </tr>
-                    @endforeach
-            </tbody>
-        </table>
-      </div>
+    
       
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-5">
         <table class="sm:w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <div class="border-b-4 py-5">
-          <img src="/img/bpLogo.png" alt="" class="w-36 sm:w-[120px]  h-auto mx-auto flex items-center justify-items-center px-5">
+          <img src="/img/bpLogo.png" alt="" class="w-36 sm:w-[122px]  h-auto mx-auto flex items-center justify-items-center px-5">
           </div>
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>

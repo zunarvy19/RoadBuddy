@@ -54,20 +54,23 @@
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
       <ul class="flex flex-col font-medium md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a href="{{route('user.dashboard')}}" class="text-lg block py-2 px-3 {{($title === 'Dashboard') ? 'bg-primary rounded-md text-white' : 'text-primary'}}" aria-current="page">Home</a>
+          <a href="{{route('user.dashboard')}}" class="text-lg block py-2 px-3 {{($title === 'Dashboard') ? 'bg-secondary rounded-md text-white' : 'text-primary'}}" aria-current="page">Home</a>
         </li>
         <li>
-          <a href="{{route('user.jenis_bbm.index')}}" class="text-lg block py-2 px-3 {{($title === 'Jenis BBM') ? 'bg-primary rounded-md text-white' : 'text-primary'}}">Harga BBM</a>
+          <a href="{{route('user.jenis_bbm.index')}}" class="text-lg block py-2 px-3 {{($title === 'Jenis BBM') ? 'bg-secondary rounded-md text-white' : 'text-primary'}}">Harga BBM</a>
         </li>
         <li>
-          <a href="{{route('user.calculate.index')}}" class= "text-lg block py-2 px-3 text-gray-900 {{($title === 'Hitung BBM') ? 'bg-primary rounded-md text-white' : 'text-primary'}}">Kalkulator</a>
+          <a href="{{route('user.home.index')}}" class="text-lg block py-2 px-3 " >Tutorial</a>
         </li>
+        @auth
+        <li>
+          <a href="{{route('user.calculate.index')}}" class= "text-lg block py-2 px-3 text-gray-900 {{($title === 'Hitung BBM') ? 'bg-secondary rounded-md text-white' : 'text-primary'}}">Kalkulator</a>
+        </li>
+        @endauth
       </ul>
     </div>
     </div>
   </nav>
-  
-
   
 
     @yield('main')  

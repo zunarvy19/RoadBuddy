@@ -15,7 +15,7 @@ bg-gray-500 bg-blend-multiply flex justify-center items-center bg-cover">
   <div class="container flex flex-col md:flex-row-reverse ">
     <div class="text space-y-6 basis-1/2">
       <p class="text-4xl md:text-6xl font-bold text-center md:text-start" id="section2">Tentang</p>
-      <hr class="border-4 border-[#164863] w-28 mx-auto md:mx-0">
+      <hr class="border-4 border-secondary w-28 mx-auto md:mx-0">
       <p class="text-md md:text-xl text-center md:text-start leading-loose md:leading-loose text-[#626f80]">
         RoadBuddy adalah aplikasi berbasis web untuk menghitung konsumsi bahan bakar kendaraan bermotor roda dua. Dirancang untuk
         memudahkan Anda ketika ingin menghitung konsumsi Bahan Bakar Minyak kendaraan Anda. Dirancang dengan desain yang simple dan mudah dipahami, dilengkapi dengan harga BBM yang sedang berlaku dan
@@ -29,34 +29,37 @@ bg-gray-500 bg-blend-multiply flex justify-center items-center bg-cover">
 </div>
 
 
-<svg width="100%" height="100%" id="svg" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 L 0,150 C 124.53333333333336,168.13333333333333 249.06666666666672,186.26666666666668 429,182 C 608.9333333333333,177.73333333333332 844.2666666666667,151.06666666666666 1022,142 C 1199.7333333333333,132.93333333333334 1319.8666666666668,141.46666666666667 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#27374D" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
-<div class="w-screen h-auto bg-[#27374D]">
+<svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 L 0,150 C 146.67857142857144,135.60714285714286 293.3571428571429,121.21428571428572 412,130 C 530.6428571428571,138.78571428571428 621.25,170.75000000000003 714,187 C 806.75,203.24999999999997 901.6428571428571,203.78571428571428 1023,195 C 1144.357142857143,186.21428571428572 1292.1785714285716,168.10714285714286 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#D16902" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
+<div class="w-screen h-auto bg-[#D16902]">
 
-  <div class="space-y-6">
-    <h1 class="text-center text-white text-4xl md:text-5xl font-bold">Fitur Kami</h1>
+  <div class="space-y-8">
+    <h1 class="text-center text-white text-4xl md:text-6xl font-bold" id="fitur">Fitur Kami</h1>
     <hr class="border-4 border-white w-28 mx-auto">
   </div>
 
 <div class="flex justify-center">
-  <div class="flex justify-center items-center flex-col md:flex-row md:gap-x-36"> {{-- container --}}
 
-    <div class="flex flex-col mt-10 justify-center items-center w-[70%]"> {{-- card 1 --}}
-      <img src="/img/RoadHorizon.png" alt="" class="w-[60%] md:w-[36%]">
-      <h1 class="text-center mb-4 text-xl md:text-3xl text-white font-bold tracking-wide">Tracking</h1>
-      <p class="text-center text-md  md:text-xl text-[#d4d4d4] md:leading-loose">Menghitung total perjalanan Anda</p>
+  <div class="flex justify-center items-center flex-col md:flex-row md:gap-x-20 "> {{-- container --}}
+
+    <div class="flex flex-col mt-10 justify-center items-center w-[70%] bg-white py-20 px-6 rounded-xl"> {{-- card 1 --}}
+        <img src="/img/road.png" alt="" class="w-[60%] md:w-[55%] text-primary h-[70#]">
+        <h1 class="text-center mb-4 text-2xl md:text-4xl text-primary font-bold tracking-wide mt-5">Tracking</h1>
+        <p class="text-center text-md font-medium  md:text-xl text-[#504f4f] md:leading-loose">Menghitung total perjalanan Anda</p>
     </div>
 
-    <div class="flex flex-col mt-10 justify-center items-center w-[70%]"> {{-- card 1 --}}
-      <img src="/img/GasPump.png" alt="" class="w-[60%] md:w-[36%]">
-      <h1 class="text-center mb-4 text-xl md:text-3xl text-white font-bold tracking-wide">Tracking</h1>
-      <p class="text-center text-md  md:text-xl text-[#d4d4d4] md:leading-loose">Menghitung total pengisian BBM</p>
+    <div class="flex flex-col mt-10 justify-center items-center w-[70%] bg-white py-20 px-6 rounded-xl"> {{-- card 1 --}}
+        <img src="/img/fuel.png" alt="" class="w-[60%] md:w-[36%] text-primary">
+        <h1 class="text-center mb-4 text-2xl md:text-4xl text-primary font-bold tracking-wide mt-5">Fuel</h1>
+        <p class="text-center text-md font-medium  md:text-xl text-[#504f4f] md:leading-loose">Menghitung konsumsi BBM <br> Anda</p>
     </div>
 
-    <div class="flex flex-col mt-10 justify-center items-center w-[70%]"> {{-- card 1 --}}
-      <img src="/img/Vector.png" alt="" class="w-[60%] md:w-[36%]">
-      <h1 class="text-center mb-4 text-xl md:text-3xl text-white font-bold tracking-wide">Gas Price</h1>
-      <p class="text-center text-md md:text-xl text-[#d4d4d4] md:leading-loose">Dilengkapi dengan Harga <br> BBM</p>
+    <div class="flex flex-col mt-10 justify-center items-center w-[70%] bg-white py-20 px-6 rounded-xl"> {{-- card 1 --}}
+        <img src="/img/price.png" alt="" class="w-[60%] md:w-[36%] text-primary">
+        <h1 class="text-center mb-4 text-2xl md:text-4xl text-primary font-bold tracking-wide mt-5">Price</h1>
+        <p class="text-center text-md font-medium  md:text-xl text-[#504f4f] md:leading-loose">Informasi harga BBM <br> terkini</p>
     </div>
+
+
 
 
 
@@ -64,9 +67,71 @@ bg-gray-500 bg-blend-multiply flex justify-center items-center bg-cover">
 </div>
 
 </div>
-<svg width="100%" height="100%" id="svg" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 L 0,150 C 163.06666666666666,177.06666666666666 326.1333333333333,204.13333333333335 494,198 C 661.8666666666667,191.86666666666665 834.5333333333333,152.5333333333333 993,139 C 1151.4666666666667,125.46666666666668 1295.7333333333333,137.73333333333335 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#27374d" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
+<svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 L 0,150 C 119.07142857142858,126.46428571428572 238.14285714285717,102.92857142857143 356,105 C 473.85714285714283,107.07142857142857 590.4999999999999,134.75 713,153 C 835.5000000000001,171.25 963.8571428571429,180.07142857142858 1086,178 C 1208.142857142857,175.92857142857142 1324.0714285714284,162.96428571428572 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#D16902" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
 
-<div class="w-screen h-screen bg-white">
 
+<div class="bg-white w-screen min-h-screen h-auto px-5 ">
+  <div class="flex flex-col md:flex-row justify-center items-center">
+    <div class="md:basis-1/2 flex justify-center md:justify-star">
+      <img src="/img/Questions-pana.png" alt="" class="w-[70%] mx-auto md:mx-0">
+    </div>
+    <div class=" basis-1/2">
+      <h1 class="text-center  md:text-start text-4xl text-primary font-bold" >Frequently Asked Questions</h1>
+      <hr class="border-4 border-secondary w-28 mx-auto md:mx-0 my-5">
+
+      
+<div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
+
+  <h2 id="accordion-color-heading-1">
+    <button type="button" class="flex items-center justify-between w-full p-5 bg-primary font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl  gap-3" data-accordion-target="#accordion-color-body-1" aria-expanded="true" aria-controls="accordion-color-body-1">
+      <span class="text-white">What is Flowbite?</span>
+      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+      </svg>
+    </button>
+  </h2>
+  <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
+    <div class="p-5 border border-b-0" >
+      <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+    </div>
+  </div>
+
+  <h2 id="accordion-color-heading-2">
+    <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right bg-primary text-gray-500 border border-b-1 border-gray-200  gap-3" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
+      <span class="text-white">Is there a Figma file available?</span>
+      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+      </svg>
+    </button>
+  </h2>
+  <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
+      <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+    </div>
+  </div>
+
+  <h2 id="accordion-color-heading-3">
+    <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right bg-primary gap-3 rounded-b-xl" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
+      <span class="text-white text-start">What are the differences between Flowbite and Tailwind UI?</span>
+      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 text-white border-b-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+      </svg>
+    </button>
+  </h2>
+  <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
+    </div>
+  </div>
 </div>
+
+    </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <h1 class="text-center m-[10px] font-medium">2024 all rights reserved</h1>
+</footer>
 @endsection
