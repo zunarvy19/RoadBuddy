@@ -14,8 +14,9 @@
 
 {{-- Card Bahan Bakar --}}
 <div class="sm:w-[70%] flex justify-center flex-col mx-auto -mt-28 sm:-mt-48 mb-10 bg-white px-5 rounded-2xl shadow-md">
-    <div class="inline">
+    <div class="inline ">
         <p class="sm:text-5xl text-3xl text-center mt-14 mx-3 font-bold">Daftar Harga Bahan Bakar</p>
+        <hr class="border-4 border-secondary my-4 w-[20%] mx-auto ">
     </div>
     <div class="main flex justify-center">
         <div class="grid sm:grid-cols-2 grid-cols-1 gap-y-8 my-14">

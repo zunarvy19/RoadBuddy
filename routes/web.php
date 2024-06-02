@@ -39,7 +39,9 @@ Route::get('/user/calculate', [CalculateController::class, 'index'])->name('user
 
 Route::get('/user/tutorial', [HomeController::class, 'index'])-> name('user.home.index');
 
-Route::get('admin/dashboard', [AdminController::class, 'index'])->name('user.admin.index');
+
+
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard.index');
 
 
 

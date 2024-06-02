@@ -113,7 +113,7 @@ bg-gray-500 bg-blend-multiply flex justify-center items-center bg-cover">
 
   <h2 id="accordion-color-heading-3">
     <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right bg-primary gap-3 rounded-b-xl" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
-      <span class="text-white text-start">What are the differences between Flowbite and Tailwind UI?</span>
+      <span class="text-white text-startbavvb">What are the differences between Flowbite and Tailwind UI?</span>
       <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 text-white border-b-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
       </svg>
