@@ -6,8 +6,8 @@
 <section class="header">
 <section class="bg-center w-full bg-[url('https://images.unsplash.com/photo-1604282742204-1e7bb6ffbd9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-gray-700 bg-blend-multiply">
     <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">We invest in the world's potential</h1>
-        <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+        <h1 class="mb-4 text-4xl font-extrabold leading-none text-white md:text-5xl lg:text-6xl tracking-wide">Daftar Harga Bahan Bakar</h1>
+        <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Harga BBM yang sedang berlaku di bulan <br> <span class="text-white font-bold underline underline-offset-4">Mei 2024</span></p>
     </div>
 </section>
 </section> 
