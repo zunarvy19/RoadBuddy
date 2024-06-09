@@ -43,6 +43,7 @@ Route::get('/user/tutorial', [HomeController::class, 'index'])-> name('user.home
 
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard.index');
 
+Route::get('/user/history', [HomeController::class, 'home'])->name("user.history.home");
 
 
 
