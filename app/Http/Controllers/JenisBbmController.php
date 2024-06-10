@@ -17,8 +17,8 @@ class JenisBbmController extends Controller
         $vivo = Jenis_bbm::with('vendor')->where('vendor_id', 3)->get();
         $bp = Jenis_bbm::with('vendor')->where('vendor_id', 4)->get();
 
-        // Debugging: tampilkan isi variabel $pertamina
-        //dd($pertamina);
+        dd($pertamina);        // Debugging: tampilkan isi variabel $pertamina
+
 
         // Kirim data ke view
         return view('user.jenisBbm',[

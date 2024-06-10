@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\calculate;
+use App\Models\jenis_bbm;
 use Illuminate\Http\Request;
 
 class CalculateController extends Controller
@@ -12,9 +13,11 @@ class CalculateController extends Controller
      */
     public function index()
     {
+
+        $dataBBM = jenis_bbm::with('vendor')->get();
         return view('user.calculate',[
-            'title' => 'Hitung BBM'
-        ]);
+            'title' => 'Hitung BBM'] , compact('dataBBM')
+        );
     }
 
     /**
@@ -38,7 +41,7 @@ class CalculateController extends Controller
      */
     public function show(calculate $calculate)
     {
-        //
+        
     }
 
     /**
