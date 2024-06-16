@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\calculate;
-use App\Models\jenis_bbm;
+use App\Models\Calculate;
 use Illuminate\Http\Request;
+use App\Models\jenis_bbm;
+use App\Helper\DateHelper;
+use App\Helpers\CurrencyHelper;
+
 
 class CalculateController extends Controller
 {
@@ -13,7 +16,6 @@ class CalculateController extends Controller
      */
     public function index()
     {
-
         $dataBBM = jenis_bbm::with('vendor')->get();
         return view('user.calculate',[
             'title' => 'Hitung BBM'] , compact('dataBBM')
@@ -33,21 +35,61 @@ class CalculateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'tanggal' => 'required|date',
+            'kendaraan' => 'required|string|max:255',
+            'kilometer_awal' => 'required|numeric',
+            'kilometer_akhir' => 'required|numeric',
+            'bbm_awal' => 'required|numeric',
+            'bbm_akhir' => 'required|numeric',
+            'jenis_bbm' => 'required|integer',
+            'harga_bbm' => 'required|numeric',
+            'total_jarak' => 'required|numeric',
+            'total_bbm' => 'required|numeric',
+            'konsumsi_bbm' => 'required|numeric',
+            'total_biaya' => 'required|numeric',
+        ]);
+
+
+        // dd($validatedData);
+
+        // Simpan ke database
+        $pengisianBbm = new Calculate();
+        $pengisianBbm->tanggal = $validatedData['tanggal'];  // Tanggal tetap dalam format asli untuk penyimpanan
+        $pengisianBbm->namakendaraan = $validatedData['kendaraan'];
+        $pengisianBbm->kilometer_awal = $validatedData['kilometer_awal'];
+        $pengisianBbm->kilometer_akhir = $validatedData['kilometer_akhir'];
+        $pengisianBbm->bbm_awal = $validatedData['bbm_awal'];
+        $pengisianBbm->bbm_akhir = $validatedData['bbm_akhir'];
+        $pengisianBbm->bbm_id = $validatedData['jenis_bbm'];
+        $pengisianBbm->harga_bbm = $validatedData['harga_bbm'];
+        $pengisianBbm->total_jarak = $validatedData['total_jarak'];
+        $pengisianBbm->total_bbm = $validatedData['total_bbm'];
+        $pengisianBbm->konsumsi_bbm = $validatedData['konsumsi_bbm'];
+        $pengisianBbm->total_biaya = $validatedData['total_biaya'];
+        $pengisianBbm->save();
+
+          // Format tanggal ke dalam format Indonesia
+        $tanggalFormatted = DateHelper::formatIndonesianDate($validatedData['tanggal']);
+        $totalBiayaFormatted = CurrencyHelper::formatRupiah($pengisianBbm->total_biaya);
+
+        // // Redirect dengan pesan sukses
+        return redirect()->route('calculate.index')->with('success', 'Data berhasil disimpan. Tanggal: ' . $tanggalFormatted);
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(calculate $calculate)
+    public function show(Calculate $calculate)
     {
-        
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(calculate $calculate)
+    public function edit(Calculate $calculate)
     {
         //
     }
@@ -55,7 +97,7 @@ class CalculateController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, calculate $calculate)
+    public function update(Request $request, Calculate $calculate)
     {
         //
     }
@@ -63,7 +105,7 @@ class CalculateController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(calculate $calculate)
+    public function destroy(Calculate $calculate)
     {
         //
     }

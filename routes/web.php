@@ -35,8 +35,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/user/calculate', [CalculateController::class, 'index'])->name('user.calculate.index');
-Route::post('calculateStore', [CalculateController::class, 'store'])->name('calculate.store');
+Route::get('/user/calculate', [CalculateController::class, 'index'])->name('calculate.index');
+Route::post('/calculate', [CalculateController::class, 'store'])->name('calculate.store');
 
 
 Route::get('/user/tutorial', [HomeController::class, 'index'])-> name('user.home.index');

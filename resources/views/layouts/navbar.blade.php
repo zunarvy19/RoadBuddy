@@ -74,7 +74,7 @@
           <a href="{{route('user.home.index')}}" class="text-lg block py-2 px-3 {{($title === 'Tutorial') ? 'bg-secondary rounded-md text-white' : 'text-primary'}} relative transition-transform transform hover:-translate-y-1 duration-200 ease-in-out" >Tutorial</a>
         </li>
         <li>
-          <a href="{{route('user.calculate.index')}}" class= "text-lg block py-2 px-3 text-gray-900 {{($title === 'Hitung BBM') ? 'bg-secondary rounded-md text-white' : 'text-primary'}} relative transition-transform transform hover:-translate-y-1 duration-200 ease-in-out">Kalkulator</a>
+          <a href="/user/calculate" class= "text-lg block py-2 px-3 text-gray-900 {{($title === 'Hitung BBM') ? 'bg-secondary rounded-md text-white' : 'text-primary'}} relative transition-transform transform hover:-translate-y-1 duration-200 ease-in-out">Kalkulator</a>
         </li>
       </ul>
     </div>
