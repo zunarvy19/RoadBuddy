@@ -29,10 +29,10 @@
                     </div>
 
                     <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="kendaraan">
+                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="namaKendaraan">
                             Nama Kendaraan
                         </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="kendaraan" name="kendaraan" type="text" placeholder="Masukkan Nama Kendaraan Anda" required>
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="kendaraan" name="namaKendaraan" type="text" placeholder="Masukkan Nama Kendaraan Anda" required>
                     </div>
 
                 </div>
@@ -85,7 +85,7 @@
 
                     <div class="md:w-1/2 md:pl-3">
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 w-full" for="harga_bbm">
-                            Harga BBM
+                            Harga BBM (Rp)
                         </label>
                         <div class="relative">
                             <input class="appearance-none block w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="harga_bbm" name="harga_bbm" type="text" readonly>

@@ -9,7 +9,11 @@ class JenisBbmController extends Controller
 {
     //
 
-    public function index()
+    public function index(){
+        return view('user.tutorial', ['title' => 'Tutorial']);
+    }
+
+    public function show()
     {
         // Mengambil data berdasarkan vendor_id
         $pertamina = Jenis_bbm::with('vendor')->where('vendor_id', 1)->get();

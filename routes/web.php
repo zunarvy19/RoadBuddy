@@ -20,33 +20,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('user.dashboard', ['title' => 'Dashboard']);
-}) -> name('user.dashboard');
+})->name('user.dashboard');
 
 
-Route::get('/user/jenis-bbm', [JenisBBMController::class, 'index'])->name('user.jenis_bbm.index');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/user/jenis-bbm', [JenisBBMController::class, 'show'])->name('user.jenis_bbm.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard.index');
+    Route::get('/admin/data', [AdminController::class, 'show'])->name('admin.data.show');
+
+    Route::get('/user/dashboard', [HomeController::class, 'home'])->name("home");
+    Route::get('/user/history', [HomeController::class, 'index'])->name("index");
 });
 
 Route::get('/user/calculate', [CalculateController::class, 'index'])->name('calculate.index');
 Route::post('/calculate', [CalculateController::class, 'store'])->name('calculate.store');
-
-
-Route::get('/user/tutorial', [HomeController::class, 'index'])-> name('user.home.index');
-
-
-
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard.index');
-
-Route::get('/user/history', [HomeController::class, 'home'])->name("user.history.home");
+Route::get('/user/tutorial', [JenisBBMController::class, 'index'])->name('user.home.index');
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

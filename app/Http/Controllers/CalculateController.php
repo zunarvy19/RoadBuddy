@@ -37,7 +37,7 @@ class CalculateController extends Controller
     {
         $validatedData = $request->validate([
             'tanggal' => 'required|date',
-            'kendaraan' => 'required|string|max:255',
+            'namaKendaraan' => 'required|string|max:255',
             'kilometer_awal' => 'required|numeric',
             'kilometer_akhir' => 'required|numeric',
             'bbm_awal' => 'required|numeric',
@@ -54,9 +54,12 @@ class CalculateController extends Controller
         // dd($validatedData);
 
         // Simpan ke database
+        $validatedData['user_id'] = auth()->user()->id;
+
+        // Membuat instance baru dari Calculate dan mengisi dengan data yang telah divalidasi
         $pengisianBbm = new Calculate();
         $pengisianBbm->tanggal = $validatedData['tanggal'];  // Tanggal tetap dalam format asli untuk penyimpanan
-        $pengisianBbm->namakendaraan = $validatedData['kendaraan'];
+        $pengisianBbm->namaKendaraan = $validatedData['namaKendaraan'];
         $pengisianBbm->kilometer_awal = $validatedData['kilometer_awal'];
         $pengisianBbm->kilometer_akhir = $validatedData['kilometer_akhir'];
         $pengisianBbm->bbm_awal = $validatedData['bbm_awal'];
@@ -67,14 +70,13 @@ class CalculateController extends Controller
         $pengisianBbm->total_bbm = $validatedData['total_bbm'];
         $pengisianBbm->konsumsi_bbm = $validatedData['konsumsi_bbm'];
         $pengisianBbm->total_biaya = $validatedData['total_biaya'];
+        $pengisianBbm->user_id = $validatedData['user_id']; // Menambahkan user_id ke instance Calculate
         $pengisianBbm->save();
 
           // Format tanggal ke dalam format Indonesia
-        $tanggalFormatted = DateHelper::formatIndonesianDate($validatedData['tanggal']);
-        $totalBiayaFormatted = CurrencyHelper::formatRupiah($pengisianBbm->total_biaya);
 
         // // Redirect dengan pesan sukses
-        return redirect()->route('calculate.index')->with('success', 'Data berhasil disimpan. Tanggal: ' . $tanggalFormatted);
+        return redirect()->route('calculate.index');
 
     }
 
@@ -83,7 +85,10 @@ class CalculateController extends Controller
      */
     public function show(Calculate $calculate)
     {
-        //
+        return view('user.detail', [
+            'title'=> 'Detail',
+            'calculate' => $calculate,
+        ]);
     }
 
     /**

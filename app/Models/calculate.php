@@ -5,10 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\jenis_bbm;
+use Carbon\Carbon;
+
 
 class Calculate extends Model
 {
     use HasFactory;
+
+    protected $table = 'calculates';
 
     protected $fillable = [
         'namaKendaraan',
@@ -22,11 +26,21 @@ class Calculate extends Model
         'total_jarak',
         'total_bbm',
         'konsumsi_bbm',
+        'user_id'
     ];
+
+    public function getTanggalFormattedAttribute()
+    {
+        return Carbon::parse($this->tanggal)->translatedFormat('l, d F Y');
+    }
 
     public function bbm()
     {
         return $this->belongsTo(jenis_bbm::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
 }

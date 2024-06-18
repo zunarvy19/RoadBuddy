@@ -31,10 +31,7 @@
         </div>
         <ul class="py-2" aria-labelledby="user-menu-button">
           <li>
-            <a href="{{route('profile.edit')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white {{($title === 'Profile') ?  'bg-gray-100 text-gray-700' : 'text-gray-700'}} ">Profile</a>
-          </li>
-          <li>
-            <a href="{{Route('user.history.home')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white {{($title === 'History') ?  'bg-gray-100 text-gray-700' : 'text-gray-700'}}">History</a>
+            <a href="/user/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white {{($title === 'Home') ?  'bg-gray-100 text-gray-700' : 'text-gray-700'}} ">Home</a>
           </li>
           <li>
             <form method="POST" action="{{ route('logout') }}">
@@ -65,10 +62,10 @@
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
       <ul class="flex flex-col font-medium md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a href="{{route('user.dashboard')}}" class="text-lg block py-2 px-3 {{($title === 'Dashboard') ? 'bg-secondary rounded-md text-white' : 'text-primary'}} relative transition-transform transform hover:-translate-y-1 duration-200 ease-in-out" aria-current="page">Home</a>
+          <a href="{{route('user.dashboard')}}" class="text-lg block py-2 px-3 {{($title === 'Dashboard') ? 'bg-secondary rounded-md text-white' : 'text-primary'}} relative transition-transform transform hover:-translate-y-1 duration-200 ease-in-out" aria-current="page">Dashboard</a>
         </li>
         <li>
-          <a href="{{route('user.jenis_bbm.index')}}" class="text-lg block py-2 px-3 {{($title === 'Jenis BBM') ? 'bg-secondary rounded-md text-white' : 'text-primary'}} relative transition-transform transform hover:-translate-y-1 duration-200 ease-in-out">Harga BBM</a>
+          <a href="{{route('user.jenis_bbm.show')}}" class="text-lg block py-2 px-3 {{($title === 'Jenis BBM') ? 'bg-secondary rounded-md text-white' : 'text-primary'}} relative transition-transform transform hover:-translate-y-1 duration-200 ease-in-out">Harga BBM</a>
         </li>
         <li>
           <a href="{{route('user.home.index')}}" class="text-lg block py-2 px-3 {{($title === 'Tutorial') ? 'bg-secondary rounded-md text-white' : 'text-primary'}} relative transition-transform transform hover:-translate-y-1 duration-200 ease-in-out" >Tutorial</a>

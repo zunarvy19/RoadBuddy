@@ -12,6 +12,11 @@ class AdminController extends Controller
         ]);
     }
 
+    public function show(){
+        return view('admin.data', [
+            'title' => 'Data BBM'
+        ]);
+    }
 
     
 }
