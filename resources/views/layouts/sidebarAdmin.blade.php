@@ -38,10 +38,10 @@
             <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
             <div class="px-4 py-3" role="none">
                <p class="text-sm text-gray-900 dark:text-white" role="none">
-                  Neil Sims
+                  {{Auth::user()->name}}
                </p>
                <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                  neil.sims@flowbite.com
+                  {{Auth::user()->email}}
                </p>
             </div>
             </div>
@@ -66,7 +66,7 @@
          </li>
 
          <li>
-            <a href="/admin/data" class="flex items-center p-2 text-gray-900 rounded-lg {{($title === 'Data BBM') ? 'text-gray-900 bg-secondary' : ' text-gray-500' }}"">
+            <a href="/admin/data" class="flex items-center p-2 text-gray-900 rounded-lg {{($title === 'Data BBM' || 'Pertamina' || 'Shell' || 'Vivo' || 'BP') ? 'text-gray-900 bg-secondary' : ' text-gray-500' }}"">
                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 {{($title === 'Data BBM') ? 'text-gray-900' : ' text-gray-500' }}"" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
                   <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"/>
                </svg>
@@ -75,14 +75,19 @@
          </li>
 
          <li>
-            <form method="POST" action="{{ route('logout') }}">
-               @csrf
-               <x-dropdown-link :href="route('logout')"
-               onclick="event.preventDefault();
-                           this.closest('form').submit();">
-               {{ __('Log Out') }}
-               </x-dropdown-link>
-            </form>
+            <form method="POST" action="{{ route('logout') }}" class="flex items-center">
+            @csrf
+            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="flex items-center -ml-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-2">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                  </svg> 
+                  <span class="text-gray-900">
+                  {{ __('Log Out') }}
+                  </span>
+                  
+            </x-dropdown-link>
+         </form>
+         
          </li>
 
       </ul>

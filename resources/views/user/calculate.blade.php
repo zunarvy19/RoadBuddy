@@ -18,7 +18,7 @@
     <div class="form">
         <form method="POST" action="{{ route('calculate.store') }}">
             @csrf
-            <div class="shadow-md px-8 pt-6 pb-8 mb-4 flex flex-col my-2 md:flex md:flex-col">
+            <div class="shadow-md px-8 pt-6 pb-8 mb-4 flex flex-col my-2 md:flex md:flex-col rounded-2xl">
 
                 <div class="-mx-3 md:flex md:flex-row-reverse mb-6 md:mb-0">
                     <div class="md:w-1/2 px-3 mb-6 md:mb-0">

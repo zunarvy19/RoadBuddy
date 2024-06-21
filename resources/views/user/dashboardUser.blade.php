@@ -2,7 +2,7 @@
 
 @section('userMain')
 <section class="w-full">
-  <div id="mainbar" class="px-1 md:pl-64 pt-16 w-screen">
+  <div id="mainbar" class="fixed left-0 top-0 pt-16 w-full md:pl-64">
 
     <div class="p-5">
       <div>
@@ -12,7 +12,7 @@
   
       <div class="mt-20">
 
-        <div class="flex justify-center flex-col md:flex-row gap-8">
+        <div class="flex justify-center flex-wrap flex-col md:flex-row gap-8">
 
           <div class="w-auto md:w-[20%] px-14 py-10 bg-secondary rounded-lg" id="card">
             <div class="font-bold text-white">

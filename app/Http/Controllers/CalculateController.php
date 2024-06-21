@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\jenis_bbm;
 use App\Helper\DateHelper;
 use App\Helpers\CurrencyHelper;
-
+use App\Models\User;
 
 class CalculateController extends Controller
 {
@@ -85,10 +85,10 @@ class CalculateController extends Controller
      */
     public function show(Calculate $calculate)
     {
-        return view('user.detail', [
-            'title'=> 'Detail',
-            'calculate' => $calculate,
-        ]);
+        $calculate = Calculate::where('user_id', auth()->user()->id)->with('bbm')->get();
+
+        return view('user.history', ['title' => 'History',], compact('calculate'));
+        
     }
 
     /**
@@ -112,6 +112,8 @@ class CalculateController extends Controller
      */
     public function destroy(Calculate $calculate)
     {
-        //
+        $calculate->delete();
+        return redirect('/user/history')->with('success', 'Data berhasil dihapus');
     }
+
 }

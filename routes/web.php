@@ -31,9 +31,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard.index');
     Route::get('/admin/data', [AdminController::class, 'show'])->name('admin.data.show');
+    route::get('/admin/pertamina', [AdminController::class, 'pertamina'])->name('pertamina');
+    route::get('/admin/shell', [AdminController::class, 'shell'])->name('shell');
+    route::get('/admin/vivo', [AdminController::class, 'vivo'])->name('vivo');
+    route::get('/admin/bp', [AdminController::class, 'bp'])->name('bp');
 
     Route::get('/user/dashboard', [HomeController::class, 'home'])->name("home");
-    Route::get('/user/history', [HomeController::class, 'index'])->name("index");
+
+    Route::get('/user/history', [CalculateController::class, 'show'])->name('show');
+    Route::delete('/user/history/{calculate}', [CalculateController::class, 'destroy'])->name('user.history.destroy');
 });
 
 Route::get('/user/calculate', [CalculateController::class, 'index'])->name('calculate.index');

@@ -18,5 +18,26 @@ class AdminController extends Controller
         ]);
     }
 
+    public function pertamina(){
+        return view('admin.pertamina',[
+            'title' => 'Pertamina'
+        ]);
+    }
+    public function shell(){
+        return view('admin.shell',[
+            'title' => 'Shell'
+        ]);
+    }
+    public function vivo(){
+        return view('admin.vivo',[
+            'title' => 'Vivo'
+        ]);
+    }
+    public function bp(){
+        return view('admin.bp',[
+            'title' => 'BP'
+        ]);
+    }
+
     
 }
