@@ -12,6 +12,10 @@ class jenis_bbm extends Model
 
     protected $table = 'jenis_bbms';
 
+    protected $fillable = [
+        
+    ];
+
 
     public function vendor(){
         return $this -> belongsTo(Vendor::class);

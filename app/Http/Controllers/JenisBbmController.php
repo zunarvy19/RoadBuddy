@@ -29,4 +29,8 @@ class JenisBbmController extends Controller
             'title' => 'Jenis BBM'
         ], compact('pertamina', 'shell', 'vivo', 'bp'));
     }
+
+    public function store(Request $request){
+        
+    }
 }
