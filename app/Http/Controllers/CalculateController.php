@@ -73,7 +73,6 @@ class CalculateController extends Controller
         $pengisianBbm->user_id = $validatedData['user_id']; // Menambahkan user_id ke instance Calculate
         $pengisianBbm->save();
 
-          // Format tanggal ke dalam format Indonesia
 
         // // Redirect dengan pesan sukses
         return redirect()->route('calculate.index');

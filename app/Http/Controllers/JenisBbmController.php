@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\jenis_bbm;
 
+
 class JenisBbmController extends Controller
 {
     //
@@ -30,7 +31,6 @@ class JenisBbmController extends Controller
         ], compact('pertamina', 'shell', 'vivo', 'bp'));
     }
 
-    public function store(Request $request){
-        
-    }
+
+    
 }

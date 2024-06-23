@@ -37,6 +37,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/admin/shell', [AdminController::class, 'shell'])->name('shell');
         Route::get('/admin/vivo', [AdminController::class, 'vivo'])->name('vivo');
         Route::get('/admin/bp', [AdminController::class, 'bp'])->name('bp');
+        Route::get('/admin/{id}/edit', [AdminController::class, 'edit'])->name('admin.edit');
+        Route::put('/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
     });
 
     Route::get('/user/dashboard', [HomeController::class, 'home'])->name("home");
