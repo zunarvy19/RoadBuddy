@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
 
-    Route::middleware('auth')->group(function () {
+    Route::middleware('isAdmin')->group(function () {
         Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard.index');
         Route::get('/admin/data', [AdminController::class, 'show'])->name('admin.data.show');
         Route::get('/admin/pertamina', [AdminController::class, 'pertamina'])->name('pertamina');

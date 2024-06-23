@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -13,11 +14,11 @@ class isAdmin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next):Response
+    public function handle(Request $request, Closure $next)
     {
-        // if(!auth()->check() || !auth()->user()->role){
-        //     abort(403);
-        // }
+        if (!Auth::check() || Auth::user()->is_admin != 1) {
+            abort(403, 'Anda tidak memiliki izin untuk mengakses halaman ini.');
+        }
         return $next($request);
     }
 }
