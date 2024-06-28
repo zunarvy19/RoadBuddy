@@ -75,7 +75,7 @@ class CalculateController extends Controller
 
 
         // // Redirect dengan pesan sukses
-        return redirect()->route('calculate.index');
+        return redirect()->route('calculate.index')->with('success', 'Data berhasil disimpan!');
 
     }
 

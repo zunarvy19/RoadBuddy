@@ -33,9 +33,10 @@ class AuthenticatedSessionController extends Controller
 
         if($request->user()->is_admin === 1){
             return redirect('/admin/dashboard');
+        } else {
+            return redirect()->intended(RouteServiceProvider::HOME);
         }
 
-        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**
@@ -49,6 +50,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
         
-        return redirect('signin');
+        return redirect('/');
     }
 }

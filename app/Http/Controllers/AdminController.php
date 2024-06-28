@@ -22,6 +22,7 @@ class AdminController extends Controller
 
     public function pertamina(){
         $pertamina = Jenis_bbm::with('vendor')->where('vendor_id', 1)->get();
+        // dd($pertamina);
         return view('admin.pertamina',[
             'title' => 'Pertamina'
         ], compact('pertamina'));
@@ -70,6 +71,17 @@ class AdminController extends Controller
         $jenisBbm->save();
 
         return redirect()->route('admin.data.show')->with('success', 'Data berhasil diupdate');
+    }
+
+    public function create(){
+
+        $data =  Jenis_bbm::with('vendor')->get();
+
+        return view('admin.crud.create',[
+            'data' => $data,
+            'title' => "Tambah Data"
+        ]);
+
     }
 
     

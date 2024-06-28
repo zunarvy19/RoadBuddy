@@ -2,12 +2,16 @@
 
 @section('main')
 <section class="w-full">
-  <div id="mainbar" class="fixed left-0 top-0 pt-16 w-full md:pl-64">
+<div id="mainbar" class="fixed left-0 top-0 pt-16 w-full md:pl-64">
     <div class="px-4 md:px-8">
-      <h1 class="text-start capitalize text-3xl py-5">Data Pertamina</h1>
-      <hr class="w-full border border-gray-200">
+        <h1 class="text-start capitalize text-3xl py-5">Data Pertamina</h1>
+    <hr class="w-full border border-gray-200">
 
-      <div class="mt-20">
+    <div class="mt-20">
+
+        @php
+            $firstPertamina = $pertamina->first();
+        @endphp
 
         <div class="flex justify-between items-center ">
             <div class="flex flex-col">
@@ -15,10 +19,11 @@
                 <hr class="w-40 border-2 border-secondary my-4">
             </div>
             <div>
-              <a href="/admin/data">
-              <button type="button" class="text-white bg-red-600
-              focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Kembali</button>
-              </a>
+                <a href="/admin/create">
+                    <button type="button" class="text-white bg-primary 
+                    focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Buat Baru
+                    </button>
+                </a>
             </div>
         </div>
         

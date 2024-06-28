@@ -37,6 +37,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/admin/shell', [AdminController::class, 'shell'])->name('shell');
         Route::get('/admin/vivo', [AdminController::class, 'vivo'])->name('vivo');
         Route::get('/admin/bp', [AdminController::class, 'bp'])->name('bp');
+        Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
+        Route::post('/admin/create', [AdminController::class, 'store'])->name('admin.store');
         Route::get('/admin/{id}/edit', [AdminController::class, 'edit'])->name('admin.edit');
         Route::put('/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
     });
@@ -49,9 +51,5 @@ Route::middleware('auth')->group(function () {
 Route::get('/user/calculate', [CalculateController::class, 'index'])->name('calculate.index');
 Route::post('/calculate', [CalculateController::class, 'store'])->name('calculate.store');
 Route::get('/user/tutorial', [JenisBBMController::class, 'index'])->name('user.home.index');
-
-require __DIR__ . '/auth.php';
-
-
 
 require __DIR__ . '/auth.php';

@@ -136,6 +136,8 @@
     </div>
 </div>
 
+{{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     const jenisBBMSelect = document.getElementById('jenis_bbm');
@@ -161,6 +163,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function calculateResults() {
         const kilometerAwal = parseFloat(kilometerAwalInput.value) || 0;
         const kilometerAkhir = parseFloat(kilometerAkhirInput.value) || 0;
+
+        if (kilometerAkhir < kilometerAwal) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Kilometer akhir tidak boleh kurang dari kilometer awal!',
+        });
+        return;
+    }
+
+
         const bbmAwal = parseFloat(bbmAwalInput.value) || 0;
         const bbmAkhir = parseFloat(bbmAkhirInput.value) || 0;
         const hargaBBM = parseFloat(hargaBBMInput.value) || 0;

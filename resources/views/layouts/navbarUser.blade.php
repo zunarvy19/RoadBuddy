@@ -21,7 +21,7 @@
             <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
         </svg>
         </button>
-      <a href="https://flowbite.com" class="flex ms-2 md:me-24">
+      <a href="{{route('user.dashboard')}}" class="flex ms-2 md:me-24">
         <img src="/img/simple.png" class="h-8 me-3" alt="Roadbuddy Logo" />
         <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">RoadBuddy</span>
       </a>
@@ -83,18 +83,19 @@
         </li>
 
         <li>
-          <form method="POST" action="{{ route('logout') }}" class="flex items-center">
+          <form method="POST" action="{{ route('logout') }}" id="logoutForm" class="flex items-center">
             @csrf
-            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="flex items-center -ml-2">
+            <x-dropdown-link href="#" id="logoutLink" class="flex items-center -ml-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 mr-2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
                 </svg> 
                 <span class="text-gray-900">
-                  {{ __('Log Out') }}
+                    {{ __('Log Out') }}
                 </span>
-                
             </x-dropdown-link>
         </form>
+        
+        
         
         </li>
 
@@ -102,7 +103,33 @@
   </div>
 </aside>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const logoutForm = document.getElementById('logoutForm');
+      const logoutLink = document.getElementById('logoutLink');
+  
+      logoutLink.addEventListener('click', function(event) {
+          event.preventDefault();
+          
+          Swal.fire({
+              title: 'Konfirmasi',
+              text: 'Apakah Anda yakin ingin logout?',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#1F2937',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Ya, Logout',
+              cancelButtonText: 'Batal'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  logoutForm.submit(); // Submit form if user confirms
+              }
+          });
+      });
+  });
+  </script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <div class="">
   @yield('userMain')  
 </div>

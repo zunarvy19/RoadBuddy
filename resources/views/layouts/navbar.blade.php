@@ -20,9 +20,12 @@
     </a>
     <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
       @auth
-      <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+      <button type="button" class="flex text-sm md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <span class="sr-only">Open user menu</span>
-        <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 block">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </svg>
+        
       </button>
       <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
         <div class="px-4 py-3">
@@ -46,9 +49,9 @@
         </ul>
       </div>
       @else
-      <a href="{{Route('signin')}}" type="button" class="flex text-sm rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+      <a href="{{Route('signin')}}" type="button" class="flex text-white bg-black hover:opacity-60 duration-100 focus:ring-4 focus:ring-white font-medium rounded-lg text-sm px-5 py-2.5" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+        Login
         <span class="sr-only">Open user menu</span>
-        <img class="w-8 h-8" src="/img/profile.png" alt="user photo">
       </a>
       @endauth
         <!-- Dropdown menu -->
@@ -78,7 +81,7 @@
     </div>
   </nav>
   
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('main')  
 </body>
 </html>
