@@ -10,7 +10,7 @@
     </section>
 </section>
 
-<div class="sm:w-[70%] fle h-screen justify-center flex-col mx-auto -mt-28 sm:-mt-48 mb-10 bg-white px-5 rounded-2xl shadow-md">
+<div class="sm:w-[70%] flcx h-screen justify-center flex-col mx-auto -mt-28 sm:-mt-48 mb-10 bg-white px-5">
     <div class="">
         <p class="sm:text-5xl text-3xl pt-10 font-bold text-start">Kalkulator</p>
         <hr class="border-4 border-secondary my-4 w-[15%] ">
@@ -18,9 +18,9 @@
     <div class="form">
         <form method="POST" action="{{ route('calculate.store') }}">
             @csrf
-            <div class="shadow-md px-8 pt-6 pb-8 mb-4 flex flex-col my-2 md:flex md:flex-col rounded-2xl">
+            <div class="shadow-md px-8 pt-6 pb-8 mb-4 flex flex-col mx-auto my-2 md:flex md:flex-col rounded-2xl">
 
-                <div class="-mx-3 md:flex md:flex-row-reverse mb-6 md:mb-0">
+                <div class="-mx-3 md:flex md:flex-row-reverse md:mb-0">
                     <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="tanggal">
                             Tanggal Anda
@@ -34,7 +34,6 @@
                         </label>
                         <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="kendaraan" name="namaKendaraan" type="text" placeholder="Masukkan Nama Kendaraan Anda" required>
                     </div>
-
                 </div>
 
                 <div class="-mx-3 md:flex my-6 md">
@@ -58,14 +57,14 @@
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="bbm_awal">
                             Pengisian BBM Awal (Liter)
                         </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" step="0.2" id="bbm_awal" name="bbm_awal" type="number" placeholder="Masukkan pengisian BBM awal" required>
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" step="0.05" id="bbm_awal" name="bbm_awal" type="number" placeholder="Masukkan pengisian BBM awal" required>
                     </div>
 
                     <div class="md:w-1/2 px-3">
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="bbm_akhir">
                             Pengisian BBM Akhir (Liter)
                         </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" step="0.2" id="bbm_akhir" name="bbm_akhir" type="number" placeholder="Masukkan pengisian BBM akhir" required>
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" step="0.05" id="bbm_akhir" name="bbm_akhir" type="number" placeholder="Masukkan pengisian BBM akhir" required>
                     </div>
                 </div>
 
@@ -98,14 +97,14 @@
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_jarak">
                             Total Jarak Tempuh Anda
                         </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="total_jarak" name="total_jarak" type="number" readonly>
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="total_jarak" name="total_jarak" type="number" readonly required>
                     </div>
 
                     <div class="md:w-1/2 px-3 ">
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_bbm">
                             Total Pengisian BBM Anda
                         </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_bbm" name="total_bbm" type="number" readonly>
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_bbm" name="total_bbm" type="number" readonly required>
                     </div>
                 </div>
 
@@ -114,14 +113,14 @@
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="konsumsi_bbm">
                             Konsumsi Bahan Bakar (L/km)
                         </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="konsumsi_bbm" name="konsumsi_bbm" type="number" readonly>
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="konsumsi_bbm" name="konsumsi_bbm" type="number" readonly required>
                     </div>
 
                     <div class="md:w-1/2 px-3">
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_biaya">
                             Total Biaya BBM
                         </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_biaya" name="total_biaya" type="number" readonly>
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_biaya" name="total_biaya" type="number" disabled required>
                     </div>
                 </div>
 
@@ -137,7 +136,6 @@
 </div>
 
 {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
-
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     const jenisBBMSelect = document.getElementById('jenis_bbm');
@@ -165,14 +163,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const kilometerAkhir = parseFloat(kilometerAkhirInput.value) || 0;
 
         if (kilometerAkhir < kilometerAwal) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Kilometer akhir tidak boleh kurang dari kilometer awal!',
-        });
-        return;
-    }
-
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Kilometer akhir tidak boleh kurang dari kilometer awal!',
+            });
+            return;
+        }
 
         const bbmAwal = parseFloat(bbmAwalInput.value) || 0;
         const bbmAkhir = parseFloat(bbmAkhirInput.value) || 0;
@@ -197,6 +194,44 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Trigger change event to set initial value if needed
     jenisBBMSelect.dispatchEvent(new Event('change'));
+
+    // Form submission
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Simulate form submission (replace with actual form submission if needed)
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+        })
+        .then(response => {
+            if (response.ok) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Data berhasil disimpan!',
+                    text: 'Ingin melihat data?',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Tidak',
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '{{ route("show") }}';
+                    }
+                });
+            } else {
+                throw new Error('Gagal menyimpan data');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Terjadi kesalahan saat menyimpan data!',
+            });
+        });
+    });
 });
 </script>
 @endsection

@@ -13,7 +13,9 @@ class jenis_bbm extends Model
     protected $table = 'jenis_bbms';
 
     protected $fillable = [
-        
+        'vendor_id',
+        'jenis_bbm',
+        'harga_bbm',
     ];
 
 

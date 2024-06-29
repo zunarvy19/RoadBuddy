@@ -37,10 +37,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/admin/shell', [AdminController::class, 'shell'])->name('shell');
         Route::get('/admin/vivo', [AdminController::class, 'vivo'])->name('vivo');
         Route::get('/admin/bp', [AdminController::class, 'bp'])->name('bp');
-        Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
-        Route::post('/admin/create', [AdminController::class, 'store'])->name('admin.store');
+        Route::get('/admin/{id}/create', [AdminController::class, 'create'])->name('admin.create');
+        Route::post('/admin/{id}', [AdminController::class, 'store'])->name('admin.store');
         Route::get('/admin/{id}/edit', [AdminController::class, 'edit'])->name('admin.edit');
         Route::put('/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
+        Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
     });
 
     Route::get('/user/dashboard', [HomeController::class, 'home'])->name("home");

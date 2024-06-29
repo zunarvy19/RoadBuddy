@@ -15,8 +15,12 @@ class AdminController extends Controller
     }
 
     public function show(){
+
+        $data = Jenis_bbm::with('vendor')->get();
+        // dd($data);
         return view('admin.data', [
-            'title' => 'Data BBM'
+            'title' => 'Data BBM',
+            'data' => $data
         ]);
     }
 
@@ -61,27 +65,63 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $validateData = $request->validate([
+            'jenis_bbm' => 'required|string|max:20',
             'harga_bbm' => 'required|numeric|min:0',
         ]);
 
     // dd($validateData);
 
         $jenisBbm = jenis_bbm::findOrFail($id);
+        $jenisBbm->jenis_bbm = $request->jenis_bbm;
         $jenisBbm->harga_bbm = $request->harga_bbm;
         $jenisBbm->save();
 
         return redirect()->route('admin.data.show')->with('success', 'Data berhasil diupdate');
     }
 
-    public function create(){
+    public function create($id){
 
-        $data =  Jenis_bbm::with('vendor')->get();
+        $data =  Jenis_bbm::find($id);
 
         return view('admin.crud.create',[
             'data' => $data,
             'title' => "Tambah Data"
         ]);
 
+    }
+
+    public function store(Request $request, $id)
+    {
+        // Validasi input
+        $inputData = $request->validate([
+            'vendor_id' => 'required|exists:vendors,id',
+            'jenis_bbm' => 'required|string|max:20',
+            'harga_bbm' => 'required|numeric',
+        ]);
+
+        // dd($inputData);
+
+        // Simpan data ke dalam model Jenis_bbm
+        Jenis_bbm::create([
+            'vendor_id' => $request->vendor_id,
+            'jenis_bbm' => $request->jenis_bbm,
+            'harga_bbm' => $request->harga_bbm,
+        ]);
+
+        // Redirect ke halaman yang diinginkan dengan pesan sukses
+        return redirect()->route('admin.data.show')->with('success', 'Data berhasil ditambahkan.');
+    }
+
+    public function destroy($id)
+    {
+        // Temukan data berdasarkan ID
+        $data = Jenis_bbm::findOrFail($id);
+
+        // Hapus data
+        $data->delete();
+
+        // Redirect dengan pesan sukses
+        return redirect()->route('admin.data.show')->with('success', 'Data berhasil dihapus.');
     }
 
     

@@ -34,17 +34,7 @@
         </div>
         <ul class="py-2" aria-labelledby="user-menu-button">
           <li>
-            <a href="/user/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white {{($title === 'Home') ?  'bg-gray-100 text-gray-700' : 'text-gray-700'}} ">Home</a>
-          </li>
-          <li>
-            <form method="POST" action="{{ route('logout') }}">
-              @csrf
-              <x-dropdown-link :href="route('logout')"
-              onclick="event.preventDefault();
-                          this.closest('form').submit();">
-            {{ __('Log Out') }}
-            </x-dropdown-link>
-            </form>
+            <a href="/user/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white {{($title === 'Home') ?  'bg-gray-100 text-gray-700' : 'text-gray-700'}} ">Akun Saya</a>
           </li>
         </ul>
       </div>
