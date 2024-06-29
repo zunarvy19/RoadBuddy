@@ -129,7 +129,5 @@ bg-gray-500 bg-blend-multiply flex justify-center items-center bg-cover">
   </div>
 </div>
 
-<footer>
-  <h1 class="text-center m-[10px] font-medium">2024 all rights reserved</h1>
-</footer>
+
 @endsection

@@ -15,5 +15,19 @@
       <p class="sm:text-5xl text-3xl text-start pt-10 font-bold">Cara Pemakaian</p>
       <hr class="border-4 border-secondary my-4 w-[20%]  ">
     </div>
+
+    <div class="md:text-xl tracking-normal leading-relaxed ml-10 text-lg">
+      <ol class="list-decimal">
+        <li class="mb-4">Catat Kilometer awal Anda</li>
+        <li class="mb-4">Catat Kilometer akhir Anda</li>
+        <li class="mb-4">Catat jumlah pengisian BBM pertama kali Anda</li>
+        <li class="mb-4">Catat jumlah pengisian BBM pertama terakhir Anda</li>
+        <li class="mb-4">Buka Menu Kalkulator</li>
+        <li class="mb-4">
+            Silahkan isi kolom nama kendaraan, tanggal perjalanan, kilometer awal, kilometer akhir, pengisian BBM awal, pengisian BBM Akhir, lalu pilih jenis BBM yang Anda gunakan. Jika sudah silahkan pencet tombol Hitung.
+        </li>
+        <li class="mb-4">Jika ingin menyimpan hasil perhitungan Anda, silahkan register lalu login. Setelah login akan muncul button Simpan untuk menyimpan perjalanan Anda</li>
+      </ol>
+    </div>
   </div>
 @endsection
