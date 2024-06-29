@@ -59,7 +59,7 @@
           </div>
   
           <div class="text-sm flex justify-between items-center mt-3">
-            <p>Don't have an account? </p>
+            <p>Tidak Punya Akun? </p>
             @if (Route::has('register'))
                 <x-primary-button>
                   <a href="{{ route('register') }}">Register</a>
