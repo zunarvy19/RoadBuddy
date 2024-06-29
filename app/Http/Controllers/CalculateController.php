@@ -51,31 +51,34 @@ class CalculateController extends Controller
         ]);
 
 
-        // dd($validatedData);
+
 
         // Simpan ke database
         $validatedData['user_id'] = auth()->user()->id;
 
-        // Membuat instance baru dari Calculate dan mengisi dengan data yang telah divalidasi
-        $pengisianBbm = new Calculate();
-        $pengisianBbm->tanggal = $validatedData['tanggal'];  // Tanggal tetap dalam format asli untuk penyimpanan
-        $pengisianBbm->namaKendaraan = $validatedData['namaKendaraan'];
-        $pengisianBbm->kilometer_awal = $validatedData['kilometer_awal'];
-        $pengisianBbm->kilometer_akhir = $validatedData['kilometer_akhir'];
-        $pengisianBbm->bbm_awal = $validatedData['bbm_awal'];
-        $pengisianBbm->bbm_akhir = $validatedData['bbm_akhir'];
-        $pengisianBbm->bbm_id = $validatedData['jenis_bbm'];
-        $pengisianBbm->harga_bbm = $validatedData['harga_bbm'];
-        $pengisianBbm->total_jarak = $validatedData['total_jarak'];
-        $pengisianBbm->total_bbm = $validatedData['total_bbm'];
-        $pengisianBbm->konsumsi_bbm = $validatedData['konsumsi_bbm'];
-        $pengisianBbm->total_biaya = $validatedData['total_biaya'];
-        $pengisianBbm->user_id = $validatedData['user_id']; // Menambahkan user_id ke instance Calculate
-        $pengisianBbm->save();
+                // dd($validatedData);
 
+        try{
+            $pengisianBbm = new Calculate();
+            $pengisianBbm->tanggal = $validatedData['tanggal'];  // Tanggal tetap dalam format asli untuk penyimpanan
+            $pengisianBbm->namaKendaraan = $validatedData['namaKendaraan'];
+            $pengisianBbm->kilometer_awal = $validatedData['kilometer_awal'];
+            $pengisianBbm->kilometer_akhir = $validatedData['kilometer_akhir'];
+            $pengisianBbm->bbm_awal = $validatedData['bbm_awal'];
+            $pengisianBbm->bbm_akhir = $validatedData['bbm_akhir'];
+            $pengisianBbm->bbm_id = $validatedData['jenis_bbm'];
+            $pengisianBbm->harga_bbm = $validatedData['harga_bbm'];
+            $pengisianBbm->total_jarak = $validatedData['total_jarak'];
+            $pengisianBbm->total_bbm = $validatedData['total_bbm'];
+            $pengisianBbm->konsumsi_bbm = $validatedData['konsumsi_bbm'];
+            $pengisianBbm->total_biaya = $validatedData['total_biaya'];
+            $pengisianBbm->user_id = $validatedData['user_id']; // Menambahkan user_id ke instance Calculate
+            $pengisianBbm->save();
 
-        // // Redirect dengan pesan sukses
-        return redirect()->route('calculate.index')->with('success', 'Data berhasil disimpan!');
+            return redirect()->route('calculate.index')->with('success', 'Data berhasil disimpan!');
+        } catch(\Exception $e){
+            return redirect()->route('calculate.index')->with('error', 'Terjadi kesalahan saat menyimpan data!');
+        }
 
     }
 

@@ -27,6 +27,7 @@
             Silahkan isi kolom nama kendaraan, tanggal perjalanan, kilometer awal, kilometer akhir, pengisian BBM awal, pengisian BBM Akhir, lalu pilih jenis BBM yang Anda gunakan. Jika sudah silahkan pencet tombol Hitung.
         </li>
         <li class="mb-4">Jika ingin menyimpan hasil perhitungan Anda, silahkan register lalu login. Setelah login akan muncul button Simpan untuk menyimpan perjalanan Anda</li>
+        <li class="mb-4">Untuk melihat hasil perhitungan Anda, silahkan akses menu history. Caranya, pencet logo profile di pojok kanan atas, lalu pencet menu Akun Saya. Setelah itu, pencet menu History</li>
       </ol>
     </div>
   </div>

@@ -48,7 +48,7 @@
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="kilometer_akhir">
                             Kilometer Akhir
                         </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="kilometer_akhir" name="kilometer_akhir" type="number" placeholder="Masukkan kilometer akhir" required>
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 pr-8" id="kilometer_akhir" name="kilometer_akhir" type="number" placeholder="Masukkan kilometer akhir" required>
                     </div>
                 </div>
 
@@ -64,7 +64,7 @@
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="bbm_akhir">
                             Pengisian BBM Akhir (Liter)
                         </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" step="0.05" id="bbm_akhir" name="bbm_akhir" type="number" placeholder="Masukkan pengisian BBM akhir" required>
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 pr-8" step="0.05" id="bbm_akhir" name="bbm_akhir" type="number" placeholder="Masukkan pengisian BBM akhir" required>
                     </div>
                 </div>
 
@@ -111,22 +111,22 @@
                 <div class="-mx-3 md:flex mb-6">
                     <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="konsumsi_bbm">
-                            Konsumsi Bahan Bakar (L/km)
+                            Konsumsi BBM
                         </label>
                         <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="konsumsi_bbm" name="konsumsi_bbm" type="number" readonly required>
                     </div>
 
-                    <div class="md:w-1/2 px-3">
+                    <div class="md:w-1/2 px-3 ">
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_biaya">
                             Total Biaya BBM
                         </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_biaya" name="total_biaya" type="number" disabled required>
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_biaya" name="total_biaya" type="number" readonly required>
                     </div>
                 </div>
 
                 <div class="flex justify-start items-center gap-x-2 flex-row-reverse">
                     @auth
-                    <button  type="submit" class="bg-primary text-white py-2 px-5 rounded-md">Simpan</button>
+                    <button type="submit" class="bg-primary text-white py-2 px-5 rounded-md" id="simpanButton" disabled>Simpan</button>
                     @endauth
                     <a href="#" id="hitungButton" class="bg-secondary text-white py-2 px-5 rounded-md">Hitung</a>
                 </div>
@@ -135,7 +135,6 @@
     </div>
 </div>
 
-{{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     const jenisBBMSelect = document.getElementById('jenis_bbm');
@@ -149,6 +148,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const konsumsiBBMInput = document.getElementById('konsumsi_bbm');
     const totalBiayaInput = document.getElementById('total_biaya');
     const hitungButton = document.getElementById('hitungButton');
+    const simpanButton = document.getElementById('simpanButton');
 
     // Mengatur harga BBM berdasarkan pilihan jenis BBM
     jenisBBMSelect.addEventListener('change', function() {
@@ -184,6 +184,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         totalBBMInput.value = totalBBM;
         konsumsiBBMInput.value = konsumsiBBM.toFixed(2);
         totalBiayaInput.value = totalBiaya.toFixed(2);
+
+        // Enable the save button
+        simpanButton.disabled = false;
     }
 
     // Event listener untuk tombol hitung
@@ -195,43 +198,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Trigger change event to set initial value if needed
     jenisBBMSelect.dispatchEvent(new Event('change'));
 
-    // Form submission
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        // Simulate form submission (replace with actual form submission if needed)
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-        })
-        .then(response => {
-            if (response.ok) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Data berhasil disimpan!',
-                    text: 'Ingin melihat data?',
-                    showCancelButton: true,
-                    confirmButtonText: 'Ya',
-                    cancelButtonText: 'Tidak',
-                })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = '{{ route("show") }}';
-                    }
-                });
-            } else {
-                throw new Error('Gagal menyimpan data');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Terjadi kesalahan saat menyimpan data!',
-            });
+    // Menampilkan pesan SweetAlert berdasarkan session flash data
+    @if(session('success'))
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: '{{ session('success') }}',
+            confirmButtonColor: '#1F2937',
         });
-    });
+    @endif
+
+    @if(session('error'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: '{{ session('error') }}',
+        });
+    @endif
 });
 </script>
 @endsection
