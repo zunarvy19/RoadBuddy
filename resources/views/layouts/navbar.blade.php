@@ -75,12 +75,20 @@
     @yield('main')  
 
 
-    <footer class="bg-primary rounded-lg shadow">
+    @if ( $title === 'Hitung BBM')
+        <footer>
+          <h1>halo</h1>
+        </footer>
+    @else
+    <footer class="bg-primary rounded-lg shadow mt-auto">
       <div class="w-full max-w-screen-xl mx-auto md:py-6">
           <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-4 mx-auto" />
-          <span class="block text-sm text-white sm:text-center text-center">© 2024 <a href="/" class="hover:underline">RoadBuddy</a>. All Rights Reserved.</span>
+          <span class="block text-sm text-white sm:text-center text-center">
+              © 2024 <a href="/" class="hover:underline">RoadBuddy</a>. All Rights Reserved.
+          </span>
       </div>
   </footer>
+    @endif
   
   
 </body>

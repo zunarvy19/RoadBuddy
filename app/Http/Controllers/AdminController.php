@@ -9,8 +9,15 @@ use App\Models\vendor;
 class AdminController extends Controller
 {
     public function index(){
+
+        $totalVendor = Vendor::count();
+
+        $totalBbm = jenis_bbm::count();
+
         return view('admin.dashboard', [
-            'title' => 'Dashboard'
+            'title' => 'Dashboard',
+            'totalVendor' => $totalVendor,
+            'totalBbm' => $totalBbm
         ]);
     }
 
