@@ -11,16 +11,18 @@
     
             <div class="mt-20">
 
+
                 <div class="flex justify-between items-center ">
                     <div class="flex flex-col">
-                        <h1 class="text-3xl" >Data Perjalanan Anda</h1>
+                        <h1 class="text-3xl" >Data Pertamina</h1>
                         <hr class="w-40 border-2 border-secondary my-4">
                     </div>
                     <div>
                         <a href="/user/calculate">
-                            <button type="button" class="text-white bg-primary
+                            <button type="button" class="text-white bg-primary 
                             focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Buat Data
                             </button>
+                        </a>
                     </div>
                 </div>
                 

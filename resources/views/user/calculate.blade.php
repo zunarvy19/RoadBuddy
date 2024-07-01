@@ -20,107 +20,119 @@
             @csrf
             <div class="shadow-md px-8 pt-6 pb-8 mb-4 flex flex-col mx-auto my-2 md:flex md:flex-col rounded-2xl">
 
-                <div class="-mx-3 md:flex md:flex-row-reverse md:mb-0">
-                    <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="tanggal">
-                            Tanggal Anda
-                        </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="tanggal" name="tanggal" type="date" required>
-                    </div>
+                <!-- Section: Keterangan Kendaraan Anda -->
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold mb-4">Keterangan Kendaraan Anda</h2>
+                    <div class="-mx-3 md:flex md:flex-row-reverse md:mb-0">
+                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="tanggal">
+                                Tanggal Anda
+                            </label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="tanggal" name="tanggal" type="date" required>
+                        </div>
 
-                    <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="namaKendaraan">
-                            Nama Kendaraan
-                        </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="kendaraan" name="namaKendaraan" type="text" placeholder="Masukkan Nama Kendaraan Anda" required>
-                    </div>
-                </div>
-
-                <div class="-mx-3 md:flex my-6 md">
-                    <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="kilometer_awal">
-                            Kilometer awal
-                        </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="kilometer_awal" name="kilometer_awal" type="number" placeholder="Masukkan kilometer awal" required>
-                    </div>
-
-                    <div class="md:w-1/2 px-3">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="kilometer_akhir">
-                            Kilometer Akhir
-                        </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 pr-8" id="kilometer_akhir" name="kilometer_akhir" type="number" placeholder="Masukkan kilometer akhir" required>
-                    </div>
-                </div>
-
-                <div class="-mx-3 md:flex mb-6">
-                    <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="bbm_awal">
-                            Pengisian BBM Awal (Liter)
-                        </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" step="0.05" id="bbm_awal" name="bbm_awal" type="number" placeholder="Masukkan pengisian BBM awal" required>
-                    </div>
-
-                    <div class="md:w-1/2 px-3">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="bbm_akhir">
-                            Pengisian BBM Akhir (Liter)
-                        </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 pr-8" step="0.05" id="bbm_akhir" name="bbm_akhir" type="number" placeholder="Masukkan pengisian BBM akhir" required>
-                    </div>
-                </div>
-
-                <div class="md:flex mb-6">
-                    <div class="md:w-1/2 md:pr-3">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 w-full" for="jenis_bbm">
-                            Jenis BBM
-                        </label>
-                        <div class="relative mb-6">
-                            <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="jenis_bbm" name="jenis_bbm" required>
-                                @foreach ($dataBBM as $item)
-                                <option value="{{ $item->id }}" data-harga="{{ $item->harga_bbm }}">{{ $item->jenis_bbm }}</option>
-                                @endforeach
-                            </select>
+                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="namaKendaraan">
+                                Nama Kendaraan
+                            </label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="kendaraan" name="namaKendaraan" type="text" placeholder="Masukkan Nama Kendaraan Anda" required>
                         </div>
                     </div>
 
-                    <div class="md:w-1/2 md:pl-3">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 w-full" for="harga_bbm">
-                            Harga BBM (Rp)
-                        </label>
-                        <div class="relative">
-                            <input class="appearance-none block w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="harga_bbm" name="harga_bbm" type="text" readonly>
+                    <div class="-mx-3 md:flex my-6 md">
+                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="kilometer_awal">
+                                Kilometer awal
+                            </label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="kilometer_awal" name="kilometer_awal" type="number" placeholder="Masukkan kilometer awal" required>
+                        </div>
+
+                        <div class="md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="kilometer_akhir">
+                                Kilometer Akhir
+                            </label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 pr-8" id="kilometer_akhir" name="kilometer_akhir" type="number" placeholder="Masukkan kilometer akhir" required>
                         </div>
                     </div>
                 </div>
 
-                <div class="-mx-3 md:flex mb-6">
-                    <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_jarak">
-                            Total Jarak Tempuh Anda
-                        </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="total_jarak" name="total_jarak" type="number" readonly required>
+                <!-- Section: Keterangan Bahan Bakar -->
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold mb-4">Keterangan Bahan Bakar</h2>
+                    <div class="-mx-3 md:flex mb-6">
+                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="bbm_awal">
+                                Pengisian BBM Awal (Liter)
+                            </label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" step="0.05" id="bbm_awal" name="bbm_awal" type="number" placeholder="Masukkan pengisian BBM awal" required>
+                        </div>
+
+                        <div class="md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="bbm_akhir">
+                                Pengisian BBM Akhir (Liter)
+                            </label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 pr-8" step="0.05" id="bbm_akhir" name="bbm_akhir" type="number" placeholder="Masukkan pengisian BBM akhir" required>
+                        </div>
                     </div>
 
-                    <div class="md:w-1/2 px-3 ">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_bbm">
-                            Total Pengisian BBM Anda
-                        </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_bbm" name="total_bbm" type="number" readonly required>
+                    <div class="md:flex mb-6">
+                        <div class="md:w-1/2 md:pr-3">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 w-full" for="jenis_bbm">
+                                Jenis BBM
+                            </label>
+                            <div class="relative mb-6">
+                                <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="jenis_bbm" name="jenis_bbm" required>
+                                    @foreach ($dataBBM as $item)
+                                    <option value="{{ $item->id }}" data-harga="{{ $item->harga_bbm }}">{{ $item->jenis_bbm }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="md:w-1/2 md:pl-3">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 w-full" for="harga_bbm">
+                                Harga BBM (Rp)
+                            </label>
+                            <div class="relative">
+                                <input class="appearance-none block w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="harga_bbm" name="harga_bbm" type="text" readonly>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="-mx-3 md:flex mb-6">
-                    <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="konsumsi_bbm">
-                            Konsumsi BBM
-                        </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="konsumsi_bbm" name="konsumsi_bbm" type="number" readonly required>
+                <!-- Section: Hasil -->
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold mb-4">Hasil</h2>
+                    <div class="-mx-3 md:flex mb-6">
+                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_jarak">
+                                Total Jarak Tempuh Anda
+                            </label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="total_jarak" name="total_jarak" type="number" readonly required>
+                        </div>
+
+                        <div class="md:w-1/2 px-3 ">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_bbm">
+                                Total Pengisian BBM Anda
+                            </label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_bbm" name="total_bbm" type="number" readonly required>
+                        </div>
                     </div>
 
-                    <div class="md:w-1/2 px-3 ">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_biaya">
-                            Total Biaya BBM
-                        </label>
-                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_biaya" name="total_biaya" type="number" readonly required>
+                    <div class="-mx-3 md:flex mb-6">
+                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="konsumsi_bbm">
+                                Konsumsi BBM
+                            </label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="konsumsi_bbm" name="konsumsi_bbm" type="number" readonly required>
+                        </div>
+
+                        <div class="md:w-1/2 px-3 ">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_biaya">
+                                Total Biaya BBM
+                            </label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_biaya" name="total_biaya" type="number" readonly required>
+                        </div>
                     </div>
                 </div>
 
