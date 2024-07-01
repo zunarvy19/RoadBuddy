@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('calculates', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('namaKendaraan');
+            $table->string('namaKendaraan', 60);
             $table->date('tanggal');
             $table->decimal('kilometer_awal', 8, 2);
             $table->decimal('kilometer_akhir', 8, 2);

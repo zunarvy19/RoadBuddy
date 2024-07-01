@@ -10,7 +10,7 @@
   </section>
   </section> 
 
-  <div class="sm:w-[70%] fle h-screen justify-center flex-col mx-auto -mt-28 sm:-mt-48 mb-10 bg-white px-5 rounded-2xl shadow-md">
+  <div class="sm:w-[70%] fle h-auto pb-8 justify-center flex-col mx-auto -mt-28 sm:-mt-48 mb-10 bg-white px-5 rounded-2xl shadow-md">
     <div class="inline">
       <p class="sm:text-5xl text-3xl text-start pt-10 font-bold">Cara Pemakaian</p>
       <hr class="border-4 border-secondary my-4 w-[20%]  ">

@@ -15,7 +15,7 @@ return new class  extends Migration
     {
         Schema::create('jenis_bbms', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_bbm');
+            $table->string('jenis_bbm', 30);
             $table->unsignedBigInteger('vendor_id')->nullable();
             $table->decimal('harga_bbm', 8, 2); // Using decimal for precise price representation
             $table->timestamps();

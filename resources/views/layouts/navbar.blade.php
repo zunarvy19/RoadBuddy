@@ -76,9 +76,7 @@
 
 
     @if ( $title === 'Hitung BBM')
-        <footer>
-          <h1>halo</h1>
-        </footer>
+    
     @else
     <footer class="bg-primary rounded-lg shadow mt-auto">
       <div class="w-full max-w-screen-xl mx-auto md:py-6">

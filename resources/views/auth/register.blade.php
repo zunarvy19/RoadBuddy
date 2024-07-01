@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title> | Proto</title>
+<title> {{$title}} | RoadBuddy</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css', 'resources/js/app.js')
@@ -17,7 +17,7 @@
     <section class="border-red-500 bg-gray-200 min-h-screen flex items-center justify-center">
       <div class="bg-gray-100 p-5 flex rounded-2xl shadow-lg max-w-3xl">
         <div class="md:w-1/2 px-5">
-          <h2 class="text-2xl font-bold text-[#002D74 text-center uppercase">Register</h2>
+          <h2 class="text-2xl font-bold text-[#002D74] text-center capitalize">Register</h2>
           <form method="POST" action="{{ route('register') }}">
             @csrf
     
@@ -60,7 +60,7 @@
     
             <div class="flex items-center justify-between mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('signin') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Sudah Punya Akun?') }}
                 </a>
     
                 <x-primary-button class="ms-4">

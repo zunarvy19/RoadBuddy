@@ -38,11 +38,11 @@
                         </div>
                         <div class="w-full">
                             <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis BBM</label>
-                            <input type="text" name="jenis_bbm" id="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Nama BBM" required=""  value="">
+                            <input type="text" name="jenis_bbm" id="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Nama BBM" @required(true)>
                         </div>
                         <div class="w-full">
                             <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Harga</label>
-                            <input type="number" name="harga_bbm" id="harga_bbm" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required="">
+                            <input type="number" name="harga_bbm" id="harga_bbm" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required inputmode="numeric" pattern="[0-9]*" @required(true)>
                         </div>
                         
                     </div>
@@ -67,6 +67,10 @@
               }
           });
       });
+
+      document.getElementById('harga_bbm').addEventListener('input', function (e) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
   </script>
 
 @endsection

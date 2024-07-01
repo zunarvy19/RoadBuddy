@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Kilometer akhir tidak boleh kurang dari kilometer awal!',
+                confirmButtonColor: '#1F2937',
             });
             return;
         }
@@ -213,6 +214,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             icon: 'error',
             title: 'Gagal!',
             text: '{{ session('error') }}',
+            confirmButtonColor: '#1F2937',
         });
     @endif
 });

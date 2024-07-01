@@ -9,7 +9,7 @@
     </div>
 
     <div class="mt-14 flex justify-center">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
 
         {{-- pertamina --}}
         <div> 
