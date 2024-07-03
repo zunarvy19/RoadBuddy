@@ -16,19 +16,41 @@
       <hr class="border-4 border-secondary my-4 w-[20%]  ">
     </div>
 
-    <div class="md:text-xl tracking-normal leading-relaxed ml-10 text-lg">
-      <ol class="list-decimal">
-        <li class="mb-4">Catat Kilometer awal Anda</li>
-        <li class="mb-4">Catat Kilometer akhir Anda</li>
-        <li class="mb-4">Catat jumlah pengisian BBM pertama kali Anda</li>
-        <li class="mb-4">Catat jumlah pengisian BBM pertama terakhir Anda</li>
-        <li class="mb-4">Buka Menu Kalkulator</li>
-        <li class="mb-4">
-            Silahkan isi kolom nama kendaraan, tanggal perjalanan, kilometer awal, kilometer akhir, pengisian BBM awal, pengisian BBM Akhir, lalu pilih jenis BBM yang Anda gunakan. Jika sudah silahkan pencet tombol Hitung.
+    <div class="md:text-xl tracking-normal leading-relaxed ml-10 text-lg text-gray-800">
+      <ol class="list-decimal ml-5">
+        <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
+          Isi penuh tangki BBM kendaraan Anda.
         </li>
-        <li class="mb-4">Jika ingin menyimpan hasil perhitungan Anda, silahkan register lalu login. Setelah login akan muncul button Simpan untuk menyimpan perjalanan Anda</li>
-        <li class="mb-4">Untuk melihat hasil perhitungan Anda, silahkan akses menu history. Caranya, pencet logo profile di pojok kanan atas, lalu pencet menu Akun Saya. Setelah itu, pencet menu History</li>
+        <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
+          Catat Kilometer awal Anda setelah mengisi penuh tangki BBM.
+        </li>
+        <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
+          Gunakan kendaraan Anda seperti biasa.
+        </li>
+        <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
+          Setelah beberapa waktu, isi kembali tangki BBM Anda hingga penuh.
+        </li>
+        <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
+          Catat jumlah BBM yang diisi pada pengisian kedua.
+        </li>
+        <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
+          Catat Kilometer akhir Anda setelah pengisian kedua.
+        </li>
+        <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
+          Buka Menu Kalkulator.
+        </li>
+        <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
+          Silahkan isi kolom nama kendaraan, tanggal perjalanan, kilometer awal, kilometer akhir, dan jumlah BBM yang diisi pada pengisian kedua. Jika sudah, silahkan pencet tombol Hitung.
+        </li>
+        <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
+          Jika ingin menyimpan hasil perhitungan Anda, silahkan register lalu login. Setelah login, di menu Kalkulator akan muncul button Simpan untuk menyimpan perjalanan Anda.
+        </li>
+        <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
+          Untuk melihat hasil perhitungan Anda, silahkan akses menu history. Caranya, pencet logo profile di pojok kanan atas, lalu pencet menu Akun Saya. Setelah itu, pencet menu History.
+        </li>
       </ol>
     </div>
+    
+
   </div>
 @endsection

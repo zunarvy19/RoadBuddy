@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         const totalJarak = kilometerAkhir - kilometerAwal;
         const totalBBM = bbmAwal + bbmAkhir;
-        const konsumsiBBM = totalJarak / totalBBM;
+        const konsumsiBBM = totalJarak / bbmAkhir;
         const totalBiaya = totalBBM * hargaBBM;
 
         totalJarakInput.value = totalJarak;
