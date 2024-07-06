@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/user/dashboard', [HomeController::class, 'home'])->name("home");
     Route::get('/user/history', [CalculateController::class, 'show'])->name('show');
+    Route::get('/user/history/print', [CalculateController::class, 'print']);
     Route::delete('/user/history/{calculate}', [CalculateController::class, 'destroy'])->name('user.history.destroy');
 });
 

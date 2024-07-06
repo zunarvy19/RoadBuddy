@@ -8,6 +8,7 @@ use App\Models\jenis_bbm;
 use App\Helper\DateHelper;
 use App\Helpers\CurrencyHelper;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class CalculateController extends Controller
 {
@@ -104,9 +105,12 @@ class CalculateController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Calculate $calculate)
-    {
-        //
+
+    public function print(){
+        $calculate = Calculate::where('user_id', auth()->user()->id)->with('bbm')->get();
+
+        $pdf = Pdf::loadView('rekap.print', compact('calculate'));
+        return $pdf->stream();
     }
 
     /**
