@@ -17,7 +17,7 @@ bg-gray-500 bg-blend-multiply flex justify-center items-center bg-cover">
       <p class="text-4xl md:text-6xl font-bold text-center md:text-start" id="section2">Tentang</p>
       <hr class="border-4 border-secondary w-28 mx-auto md:mx-0">
       <p class="text-md md:text-xl text-center md:text-start leading-loose md:leading-loose text-[#626f80]">
-        RoadBuddy adalah aplikasi berbasis web untuk menghitung konsumsi bahan bakar kendaraan bermotor roda dua. Dirancang untuk
+        RoadBuddy adalah aplikasi berbasis web untuk menghitung konsumsi bahan bakar kendaraan bermotor roda dua. Dirancang dengan bantuan metode full-to-full untuk
         memudahkan Anda ketika ingin menghitung konsumsi Bahan Bakar Minyak kendaraan Anda. Dirancang dengan desain yang simple dan mudah dipahami, dilengkapi dengan harga BBM yang sedang berlaku dan
         dapat menghitung biaya yang Anda keluarkan untuk mengisi BBM.
       </p>

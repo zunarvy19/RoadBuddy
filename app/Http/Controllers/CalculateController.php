@@ -17,7 +17,7 @@ class CalculateController extends Controller
      */
     public function index()
     {
-        $dataBBM = jenis_bbm::with('vendor')->get();
+        $dataBBM = jenis_bbm::with('vendor')->get()->sortBy('jenis_bbm');
         return view('user.calculate',[
             'title' => 'Hitung BBM'] , compact('dataBBM')
         );
@@ -110,7 +110,7 @@ class CalculateController extends Controller
         $calculate = Calculate::where('user_id', auth()->user()->id)->with('bbm')->get();
 
         $pdf = Pdf::loadView('rekap.print', compact('calculate'));
-        return $pdf->stream();
+        return $pdf->download('rekap.pdf');
     }
 
     /**

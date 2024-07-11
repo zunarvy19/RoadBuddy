@@ -12,7 +12,7 @@
   
 
 
-  <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-lg">
+  <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-lg fixed top-0 w-full">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="{{route('user.dashboard')}}" class="flex items-center lg:space-x-1 rtl:space-x-reverse">
         <img src="/img/simple.png" class="h-8"/>

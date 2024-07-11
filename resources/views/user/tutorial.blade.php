@@ -19,7 +19,7 @@
     <div class="md:text-xl tracking-normal leading-relaxed ml-10 text-lg text-gray-800">
       <ol class="list-decimal ml-5">
         <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
-          Isi penuh tangki BBM kendaraan Anda.
+          Isi penuh tangki BBM kendaraan Anda dan perhatikan total liter di pompa pengisian BBM.
         </li>
         <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
           Catat Kilometer awal Anda setelah mengisi penuh tangki BBM.
@@ -28,7 +28,7 @@
           Gunakan kendaraan Anda seperti biasa.
         </li>
         <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
-          Setelah beberapa waktu, isi kembali tangki BBM Anda hingga penuh.
+          Setelah BBM hampir habis, isi kembali tangki BBM Anda hingga penuh dan perhatikan total liter di pompa pengisian BBM..
         </li>
         <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
           Catat jumlah BBM yang diisi pada pengisian kedua.

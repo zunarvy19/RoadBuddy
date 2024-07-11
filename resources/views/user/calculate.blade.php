@@ -26,7 +26,7 @@
                     <div class="-mx-3 md:flex md:flex-row-reverse md:mb-0">
                         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="tanggal">
-                                Tanggal Anda
+                                Tanggal Perjalanan
                             </label>
                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="tanggal" name="tanggal" type="date" required>
                         </div>
@@ -106,14 +106,14 @@
                     <div class="-mx-3 md:flex mb-6">
                         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_jarak">
-                                Total Jarak Tempuh Anda
+                                Total Jarak Tempuh Anda (Kilometer)
                             </label>
                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="total_jarak" name="total_jarak" type="number" readonly required>
                         </div>
 
                         <div class="md:w-1/2 px-3 ">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_bbm">
-                                Total Pengisian BBM Anda
+                                Total Pengisian BBM Anda (Liter)
                             </label>
                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_bbm" name="total_bbm" type="number" readonly required>
                         </div>
@@ -122,14 +122,14 @@
                     <div class="-mx-3 md:flex mb-6">
                         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="konsumsi_bbm">
-                                Konsumsi BBM
+                                Konsumsi BBM (Kilometer/Liter)
                             </label>
                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="konsumsi_bbm" name="konsumsi_bbm" type="number" readonly required>
                         </div>
 
                         <div class="md:w-1/2 px-3 ">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="total_biaya">
-                                Total Biaya BBM
+                                Total Biaya BBM (Rupiah)
                             </label>
                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="total_biaya" name="total_biaya" type="number" readonly required>
                         </div>
@@ -216,10 +216,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         Swal.fire({
             icon: 'success',
             title: 'Berhasil!',
-            text: '{{ session('success') }}',
+            text: 'Data berhasil disimpan, ingin melihat data?',
             confirmButtonColor: '#1F2937',
+            confirmButtonText: 'Lihat Data',
+            showCancelButton: true,
+            cancelButtonText: 'Tutup'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '/user/history';
+            }
         });
     @endif
+
 
     @if(session('error'))
         Swal.fire({
