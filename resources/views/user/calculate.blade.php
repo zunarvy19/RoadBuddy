@@ -21,7 +21,7 @@
             <div class="shadow-md px-8 pt-6 pb-8 mb-4 flex flex-col mx-auto my-2 md:flex md:flex-col rounded-2xl">
 
                 <!-- Section: Keterangan Kendaraan Anda -->
-                <div class="mb-6">
+                <div class="">
                     <h2 class="text-xl font-bold mb-4">Keterangan Kendaraan Anda</h2>
                     <div class="-mx-3 md:flex md:flex-row-reverse md:mb-0">
                         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
@@ -39,8 +39,8 @@
                         </div>
                     </div>
 
-                    <div class="-mx-3 md:flex my-6 md">
-                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                    <div class="-mx-3 md:flex my-6 ">
+                        <div class="md:w-1/2 px-3 md:mb-0">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="kilometer_awal">
                                 Kilometer awal
                             </label>
@@ -53,6 +53,19 @@
                             </label>
                             <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 pr-8" id="kilometer_akhir" name="kilometer_akhir" type="number" placeholder="Masukkan kilometer akhir" required>
                         </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 md:pr-3">
+                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 w-full" for="jenis_bbm">
+                        Brand Motor
+                    </label>
+                    <div class="relative mb-6">
+                        <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="brand" name="brand_id" required>
+                            @foreach ($brand as $item)
+                            <option value="{{ $item->id }}" >{{ $item->model }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
@@ -83,7 +96,7 @@
                             <div class="relative mb-6">
                                 <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="jenis_bbm" name="jenis_bbm" required>
                                     @foreach ($dataBBM as $item)
-                                    <option value="{{ $item->id }}" data-harga="{{ $item->harga_bbm }}">{{ $item->jenis_bbm }}</option>
+                                <option value="{{ $item->id }}" data-harga="{{ $item->harga_bbm }}">{{ $item->jenis_bbm }}</option>
                                     @endforeach
                                 </select>
                             </div>

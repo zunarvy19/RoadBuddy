@@ -3,7 +3,6 @@
 <head>
   <title>{{$title}}</title>
   <meta charset="utf-8">
-  {{-- <title>{{$title}}</title> --}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/img/frame2.png"/>
   @vite(['resources/css/app.css','resources/js/app.js'])

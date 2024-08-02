@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('namaKendaraan', 60);
+            $table->unsignedBigInteger('brand_id',);
             $table->date('tanggal');
             $table->decimal('kilometer_awal', 8, 2);
             $table->decimal('kilometer_akhir', 8, 2);
@@ -30,7 +31,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('bbm_id')->references('id')->on('jenis_bbms')->onDelete('cascade');
-
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
         });
     }
 

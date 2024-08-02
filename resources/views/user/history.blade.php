@@ -12,27 +12,28 @@
             <div class="mt-20">
 
 
-                <div class="flex justify-between items-center ">
-                    <div class="flex flex-col">
-                        <h1 class="text-3xl" >Data Pertamina</h1>
+                <div class="flex flex-col sm:flex-row justify-between items-center">
+                    <div class="flex flex-col mb-4 sm:mb-0">
+                        <h1 class="text-3xl">Data perjalanan</h1>
                         <hr class="w-40 border-2 border-secondary my-4">
                     </div>
-                    <div>
-                        <a href="/user/calculate">
-                            <button type="button" class="text-white bg-primary 
-                            focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Buat Data
+                    <div class="flex flex-wrap justify-end gap-2 w-full sm:w-auto">
+                        <a href="/user/calculate" class="flex-1 sm:flex-none">
+                            <button type="button" class="w-full text-white bg-primary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-2 py-1.5 sm:px-5 sm:py-2.5">
+                                Buat Data
                             </button>
                         </a>
-                        <a href="{{ URL::to('/user/history/print') }}">
-                            <button type="button" class="text-white bg-primary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+                        <a href="{{ URL::to('/user/history/print') }}" class="flex-1 sm:flex-none">
+                            <button type="button" class="w-full text-white bg-primary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-2 py-1.5 sm:px-5 sm:py-2.5 text-center inline-flex items-center justify-center">
                                 Download Rekap Data
-                                <svg class="w-5 h-5 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 text-white ml-2 sm:w-5 sm:h-5 hidden md:inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 17v-5h1.5a1.5 1.5 0 1 1 0 3H5m12 2v-5h2m-2 3h2M5 10V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1v6M5 19v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1M10 3v4a1 1 0 0 1-1 1H5m6 4v5h1.375A1.627 1.627 0 0 0 14 15.375v-1.75A1.627 1.627 0 0 0 12.375 12H11Z"/>
                                 </svg>
                             </button>
                         </a>
                     </div>
                 </div>
+                
                 
                 @php
                     $no = 1;
@@ -44,8 +45,9 @@
             <tr>
                 <th scope="col" class="px-4 py-1">No. </th>
                 <th scope="col" class="px-4 py-1">Nama Kendaraan</th>
-                <th scope="col" class="px-4 py-4 ">Tanggal</th>
-                <th scope="col" class="px-4 py-3">Jenis BBM</th>
+                <th scope="col" class="px-4 py-3">Brand Kendaraan</th>
+                <th scope="col" class="px-4 py-1">Tanggal</th>
+                <th scope="col" class="px-4 py-4">Jenis BBM</th>
                 <th scope="col" class="px-4 py-3">Total Kilometer</th>
                 <th scope="col" class="px-4 py-3">Total Pengisian</th>
                 <th scope="col" class="px-4 py-3">Total Biaya</th>
@@ -60,6 +62,7 @@
             <tr class="border-b dark:border-gray-700">
                 <th scope="row" class="px-4 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$no++}}</th>
                 <td class="px-4 py-3 capitalize">{{$data->namaKendaraan}}</td>
+                <td class="px-4 py-3">{{ $data->brand->model ?? 'Model Brand Tidak Ditemukan' }}</td>
                 <td class="px-4 py-3">{{$data->tanggal_formatted}}</td>
                 <td class="px-4 py-3">{{ $data->bbm->jenis_bbm ?? 'Jenis BBM Tidak Ditemukan' }}</td>
                 <td class="px-4 py-3">{{ rtrim(rtrim(number_format($data->total_jarak, 2, ',', '.'), '0'), ',') }} KM</td>

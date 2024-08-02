@@ -16,9 +16,10 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::check() || Auth::user()->is_admin != 1) {
+        if (Auth::user()->is_admin != 1) {
             abort(403, 'Anda tidak memiliki izin untuk mengakses halaman ini.');
         }
+
         return $next($request);
     }
 }

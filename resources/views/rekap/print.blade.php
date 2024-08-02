@@ -96,6 +96,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama Kendaraan</th>
+                        <th>Brand Kendaraan</th>
                         <th>Tanggal</th>
                         <th>Jenis BBM</th>
                         <th>Total Kilometer</th>
@@ -112,6 +113,7 @@
                     <tr>
                         <td>{{$no++}}</td>
                         <td>{{$item->namaKendaraan}}</td>
+                        <td>{{$item->brand->model}}</td>
                         <td>{{$item->tanggal_formatted}}</td>
                         <td>{{$item->bbm->jenis_bbm}}</td>
                         <td>{{ rtrim(rtrim(number_format($item->total_jarak, 2, ',', '.'), '0'), ',') }} KM</td>

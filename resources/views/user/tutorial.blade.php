@@ -28,7 +28,7 @@
           Gunakan kendaraan Anda seperti biasa.
         </li>
         <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
-          Setelah BBM hampir habis, isi kembali tangki BBM Anda hingga penuh dan perhatikan total liter di pompa pengisian BBM..
+          Setelah sampai di tempat tujuan, isi kembali tangki BBM Anda hingga penuh dan perhatikan total liter di pompa pengisian BBM.
         </li>
         <li class="mb-4 p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 transition duration-300">
           Catat jumlah BBM yang diisi pada pengisian kedua.
